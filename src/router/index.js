@@ -18,10 +18,43 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue")
+  },
+  {
+    path: "/brazil",
+    name: "brazil",
+    component: () =>
+      import(/* webpackChunkName: "brazil" */ "../views/Brazil.vue")
+  },
+  {
+    path: "/hawaii",
+    name: "hawaii",
+    component: () =>
+      import(/* webpackChunkName: "hawaii" */ "../views/Hawaii.vue")
+  },
+  {
+    path: "/jamaica",
+    name: "jamaica",
+    component: () =>
+      import(/* webpackChunkName: "jamaica" */ "../views/Jamaica.vue")
+  },
+  {
+    path: "/panama",
+    name: "panama",
+    component: () =>
+      import(/* webpackChunkName: "panama" */ "../views/Panama.vue")
+  },
+  {
+    path: "/details/:id n",
+    name: "DestinationDetails",
+    component: () =>
+      import(
+        /* webpackChunkName: "DestinationDetails" */ "../views/DestinationDetails.vue"
+      )
   }
 ];
 
 const router = new VueRouter({
+  linkExactActiveClass: "rafamar-active-link",
   routes
 });
 
