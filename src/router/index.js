@@ -8,7 +8,8 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: Home,
+    props: true
   },
   {
     path: "/about",
@@ -20,16 +21,29 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/About.vue")
   },
   {
-    path: "/details/:id n",
+    path: "/destination/:slug",
     name: "DestinationDetails",
+    props: true,
     component: () =>
       import(
         /* webpackChunkName: "DestinationDetails" */ "../views/DestinationDetails.vue"
-      )
+      ),
+    children: [
+      {
+        path: ":experienceSlug",
+        name: "ExperienceDetails",
+        props: true,
+        component: () =>
+          import(
+            /* webpackChunkName: "ExperienceDetails" */ "../views/ExperienceDetails.vue"
+          )
+      }
+    ]
   }
 ];
 
 const router = new VueRouter({
+  mode: "history",
   linkExactActiveClass: "rafamar-active-link",
   routes
 });

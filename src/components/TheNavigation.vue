@@ -11,7 +11,7 @@
         <router-link
           :to="{
             name: 'DestinationDetails',
-            params: { id: destination.id }
+            params: { slug: destination.slug }
           }"
         >
           {{ destination.name }}
@@ -25,7 +25,7 @@ import store from "../../store.js";
 export default {
   data() {
     return {
-      destinationId: this.$route.params.id,
+      slug: this.$route.params.slug,
       destinations: store.destinations
     };
   }
@@ -34,16 +34,17 @@ export default {
 <style scoped>
 #nav {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  border-bottom: 1px solid grey;
+  z-index: 1;
 }
 #nav a {
-  font-weight: bold;
   color: #2c3e50;
-  padding: 0 10px;
   text-decoration: none;
-}
-#nav a.router-link-exact-active {
-  color: #42b983;
+  font-weight: bold;
 }
 #nav a.rafamar-active-link {
   color: #6ab4d6;
