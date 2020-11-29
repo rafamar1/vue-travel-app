@@ -1,5 +1,7 @@
-# vue-travel-app
+# vue-travel-app Description
 An application made in Vuejs for testing Vue Router
+
+_______________________________________________________
 
 # Project setup
 npm install
